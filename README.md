@@ -13,3 +13,7 @@ npm install -g typescript
 - Compile
 
 tsc helloworld.ts
+
+- Handbook
+
+https://www.typescriptlang.org/docs/handbook/basic-types.html
