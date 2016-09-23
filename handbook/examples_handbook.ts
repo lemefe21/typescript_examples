@@ -54,17 +54,65 @@ console.log(Color3);
 let c3:Color3 = Color3.Green;
 console.log(c3);
 let colorName: string = Color3[10];
-alert(colorName);
+console.log(colorName);
 
 //Any
+let notSure: any = 4;
+console.log(typeof notSure);
+notSure = "maybe a string instead";
+console.log(typeof notSure);
+notSure = false;
+console.log(typeof notSure);
 
+let notSure2: any = 4;
+console.log(typeof notSure2);
+//notSure2.ifItExists();
+notSure2.toFixed();
 
+let prettySure: Object = 4;
+//Erro
+//'toFixed' doesn't exist on type 'Object'
+//prettySure.toFixed();
 
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+console.log(list[1]);
 
+//Void
+function warnUser(): void {
+    console.log("This is my warning message!");
+}
+warnUser();
 
+//only assings
+let unusable: void = undefined;
+console.log(`Undefined: ${typeof unusable}`);
 
+let unusable2: void = null;
+console.log(`Undefined: ${typeof unusable2}`);
+//Erro
+//Type 'number' is not assignable to type 'void'.
+//let unusable3: void = 1234;
 
+//Null and Undefined
+let u1: number = undefined;
+console.log(`number to undefined: ${typeof u1}`);
+let u2: string = null;
+console.log(`number to undefined: ${typeof u2}`);
 
+//Type assertions (Cast)
+//“trust me, I know what I’m doing.”
+//“angle-bracket” syntax
+let someValue: any = "This is a string";
+console.log(`someValue: '${someValue}', is a type of ${typeof someValue}.`);
 
+let strLength: number = (<string>someValue).length;
+console.log(`strLength: ${strLength}, is a type of ${typeof strLength} with casting.`);
 
+//as-syntax
+//TypeScript with JSX, only as-style assertions are allowed
+let someValue2: any = "This is a string as-syntax";
+console.log(`someValue2: '${someValue2}', is a type of ${typeof someValue2}.`);
 
+let strLength2: number = (someValue2 as string).length;
+console.log(`strLength2: ${strLength2}, is a type of ${typeof strLength2} with casting.`);
